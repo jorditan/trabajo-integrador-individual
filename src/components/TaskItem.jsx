@@ -3,7 +3,7 @@ import { MdOutlineCancel } from "react-icons/md";
 
 
 
-function TaskItem({task, onCompleteTask, onDeleteTask}) {
+function TaskItem({task, onCompleteTask}) {
      return (
           <div className="taskItem flex row">
                <div className="id">
@@ -23,7 +23,6 @@ function TaskItem({task, onCompleteTask, onDeleteTask}) {
 
                <div className="botones flex column">
                     <FaCheckCircle  className="icon" onClick={onCompleteTask}/>
-                    <MdOutlineCancel className="icon" onClick={onDeleteTask}/>
                </div>
           </div>
      );

@@ -1,5 +1,5 @@
 import TaskItem from "./TaskItem";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -10,19 +10,6 @@ function TaskList({ tasks, setTasks}) {
                duration: 2000,
           });
      }, []);
-
-
-     const taskCompletada = (taskId) => {
-          const taskActualizadas = [];
-          
-          for (let i = 0; i < tasks.length; i++) {
-               if (tasks[i].id !== taskId) {
-                    taskActualizadas.push(tasks[i])
-               }
-          }
-
-          setTasks(taskActualizadas);
-     }
 
      const eliminarTask = (taskId) => {
           const taskActualizadas = [];
@@ -50,8 +37,7 @@ function TaskList({ tasks, setTasks}) {
                                              <TaskItem
                                                   task={task}
                                                   key={task.id}
-                                                  onCompleteTask={() => taskCompletada(task.id)}
-                                                  onDeleteTask={() => eliminarTask(task.id)}
+                                                  onCompleteTask={() => eliminarTask(task.id)}
                                              />
                                         )
                                    })

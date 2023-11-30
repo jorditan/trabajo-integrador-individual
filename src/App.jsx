@@ -4,6 +4,17 @@ import TaskForm from './components/TaskForm'
 
 function App() {
 
+  const recuperarTasks = () => {
+    const tasksHechas = localStorage.getItem('tasks');
+    
+    if (tasksHechas) {
+      return JSON.parse(tasksHechas);
+    }
+    else {
+      return []
+    }
+  }
+
   class Task {
     constructor(id, desc, importancia){
       this.id = id,
@@ -14,11 +25,12 @@ function App() {
   }
 
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(recuperarTasks());
+
 
   useEffect(() => {
-      console.log(tasks)
-  },[tasks])
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <>
