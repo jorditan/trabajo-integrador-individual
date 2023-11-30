@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
+
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: content-box;
+     font-family: 'Rubik', sans-serif;
+     background-color: var(--colorPrincipal);
+}
+
+.flex {
+     display: flex;
+}
+
+.column {
+     flex-direction: column;
+}
+
+.row {
+     flex-direction: row;
+}
+
+.enfasis {
+     font-weight: 500;
+}
+
+.underline {
+     border-bottom: 1px solid var(--colorTexto);
+     margin-bottom: 5px;
+}
+
+:root {
+     --colorPrincipal: #C3FAC3;
+     --colorSegundario: #1F391F;
+     --colorTexto: #296129;
+     --hoverTexto: #5C945C;
+     --botones: #A3C7A3;
+     --botonActivo: #1da82f;
+}
+
+
+/* --------------------- ContedorTareas ---------------------------- */
+
+
+.contenedorTareas {
+     justify-content: center;
+     align-items: center;
+     padding: 2em;
+
+     p {
+          color: var(--colorTexto);
+     }
+     .titulo {
+          color: #1F391F;
+          font-weight: 800;
+          font-size: 4rem;
+          text-shadow: -2px 1px 22px rgba(0, 0, 0, 0.32);
+     }
+
+          .container {
+               max-width: 40em;
+               height: auto;
+               background-color: #a0ffa0;
+               border-radius: 30px;
+               box-shadow: 6px -6px 33px #b7ebb7,
+                    -6px 6px 33px #cfffcf;
+               margin-top: 2em;
+               justify-content: center;
+               align-items: center;
+          }
+
+          .taskList {
+               align-items: center;
+               background-color: transparent;
+               transition: .3s all ease-in;
+               
+               .taskItem {
+                    box-shadow: 0px 10px 100px -3px rgba(0,0,0,0.1);
+                    align-items: center;
+                    color: var(--colorTexto);
+                    padding: 1em;
+                    margin: 2em;
+                    border-radius: 20px;
+                    max-width: 80%;
+                    height: auto;
+                    gap: 20px;
+
+          
+                    .etiqueta {
+                         justify-content: center;
+                         align-items: center;
+                    }
+          
+                    .divisor {
+                         width: 3px;
+                         height: 80px;
+                         background-color: var(--hoverTexto);
+                         border-radius: 4px;
+                    }
+          
+                    .botones {
+                         cursor: pointer;
+                         gap: 15px;
+                         .icon {
+                              font-size: 30px;
+                              height: 1em;
+                              width: 1em;
+                              color: var(--colorSegundario);
+                              transition: .3s all ease-out;
+          
+                              &:hover {
+                                   color: var(--hoverTexto);
+                                   transform: translateY(-5px);
+                              }
+          
+                              &:active {
+                                   color: var(--colorSegundario);
+                                   scale: (.9);
+                              }
+                         }
+                    }
+               }
+          }
+     }
+
+
+@media screen and (max-width:519px) {
+     .contenedorTareas {
+          .taskItem {
+               flex-direction: column;
+     
+               .divisor {
+                    height: 3px;
+                    width: 80%;
+               }
+
+               .botones {
+                    flex-direction: row;
+               }
+          }
+     }
+}
+
+@media screen and (max-width: 495px) {
+     .contenedorFormulario {
+          padding: 1em;
+     }
+     .seleccion {
+          .tituloSecundario {
+               font-size: 1rem;
+               text-align: left;
+          }
+
+     }
+}
+
+
+
+/*----------------- Contenedor formulario --------------- */
+
+.contenedorFormulario {
+     height: auto;
+     padding-bottom: 2em;
+     justify-content: center;
+     align-items: center;
+     justify-content: center;
+
+     label {
+          font-size: 1.2em;
+          color: var(--colorSegundario);
+     }
+
+
+     input {
+          width: 20em;
+          background-color: transparent;
+          border: 1px solid var(--colorSegundario);
+          border-radius: 10px;
+          min-height: 1em;
+          padding: 1em;
+          transition: .3s all ease-in;
+          margin: 1em;
+
+
+          &:hover {
+               background-color: var(--colorSegundario);
+               color: var(--colorPrincipal);
+          }
+     }
+
+     #botonAgregar {
+          height: 2.5em;
+          width: 12em;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #1F391F;
+          border: 1px solid var(--colorSegundario);
+          transition: 0.3s all ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+               background-color: var(--colorSegundario);
+               color: var(--colorPrincipal);
+
+               #icon {
+                    color: var(--colorPrincipal);
+                    background-color: var(--colorSegundario); // Cambia el color del icono al hacer hover
+               }
+          }
+
+          #icon {
+               margin-right: 5px;
+               font-size: 25px;
+               color: var(--colorSegundario);
+               transition: 0.3s all ease-in-out;
+          }
+     }
+}
+
+.tituloSecundario {
+     font-size: 1.2rem;
+     color: var(--colorSegundario);
+}
+
+.opciones {
+     align-items: center;
+     justify-content: center;
+     margin: 1em;
+
+     #botonEtiqueta {
+          color: var(--colorPrincipal);
+          width: 5em;
+          height: 3em;
+          margin: 10px;
+          border-radius: 20px;
+          background-color: var(--colorSegundario);
+          border: none;
+          cursor: pointer;
+          transition: .3s all ease-in;
+     
+          &:hover {
+               background-color: var(--colorTexto);
+          }
+
+          &:focus {
+               background-color: var(--botonActivo);
+               color: var(--colorPrincipal);
+               transform: scale(1.1);
+          }
+     
+     }
+}
+
+.activo {
+     background-color: var(--colorTexto);
+}
+

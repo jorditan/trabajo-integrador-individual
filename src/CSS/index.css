@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--colorPrincipal);
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.enfasis {
+  font-weight: 500;
+}
+
+.underline {
+  border-bottom: 1px solid var(--colorTexto);
+  margin-bottom: 5px;
+}
+
+:root {
+  --colorPrincipal: #C3FAC3;
+  --colorSegundario: #1F391F;
+  --colorTexto: #296129;
+  --hoverTexto: #5C945C;
+  --botones: #A3C7A3;
+  --botonActivo: #1da82f;
+}
+
+/* --------------------- ContedorTareas ---------------------------- */
+.contenedorTareas {
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+.contenedorTareas p {
+  color: var(--colorTexto);
+}
+.contenedorTareas .titulo {
+  color: #1F391F;
+  font-weight: 800;
+  font-size: 4rem;
+  text-shadow: -2px 1px 22px rgba(0, 0, 0, 0.32);
+}
+.contenedorTareas .container {
+  max-width: 40em;
+  height: auto;
+  background-color: #a0ffa0;
+  border-radius: 30px;
+  box-shadow: 6px -6px 33px #b7ebb7, -6px 6px 33px #cfffcf;
+  margin-top: 2em;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorTareas .taskList {
+  align-items: center;
+  background-color: transparent;
+  transition: 0.3s all ease-in;
+}
+.contenedorTareas .taskList .taskItem {
+  box-shadow: 0px 10px 100px -3px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  color: var(--colorTexto);
+  padding: 1em;
+  margin: 2em;
+  border-radius: 20px;
+  max-width: 80%;
+  height: auto;
+  gap: 20px;
+}
+.contenedorTareas .taskList .taskItem .etiqueta {
+  justify-content: center;
+  align-items: center;
+}
+.contenedorTareas .taskList .taskItem .divisor {
+  width: 3px;
+  height: 80px;
+  background-color: var(--hoverTexto);
+  border-radius: 4px;
+}
+.contenedorTareas .taskList .taskItem .botones {
+  cursor: pointer;
+  gap: 15px;
+}
+.contenedorTareas .taskList .taskItem .botones .icon {
+  font-size: 30px;
+  height: 1em;
+  width: 1em;
+  color: var(--colorSegundario);
+  transition: 0.3s all ease-out;
+}
+.contenedorTareas .taskList .taskItem .botones .icon:hover {
+  color: var(--hoverTexto);
+  transform: translateY(-5px);
+}
+.contenedorTareas .taskList .taskItem .botones .icon:active {
+  color: var(--colorSegundario);
+  scale: 0.9;
+}
+
+@media screen and (max-width: 519px) {
+  .contenedorTareas .taskItem {
+    flex-direction: column;
+  }
+  .contenedorTareas .taskItem .divisor {
+    height: 3px;
+    width: 80%;
+  }
+  .contenedorTareas .taskItem .botones {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 495px) {
+  .contenedorFormulario {
+    padding: 1em;
+  }
+  .seleccion .tituloSecundario {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+/*----------------- Contenedor formulario --------------- */
+.contenedorFormulario {
+  height: auto;
+  padding-bottom: 2em;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorFormulario label {
+  font-size: 1.2em;
+  color: var(--colorSegundario);
+}
+.contenedorFormulario input {
+  width: 20em;
+  background-color: transparent;
+  border: 1px solid var(--colorSegundario);
+  border-radius: 10px;
+  min-height: 1em;
+  padding: 1em;
+  transition: 0.3s all ease-in;
+  margin: 1em;
+}
+.contenedorFormulario input:hover {
+  background-color: var(--colorSegundario);
+  color: var(--colorPrincipal);
+}
+.contenedorFormulario #botonAgregar {
+  height: 2.5em;
+  width: 12em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1F391F;
+  border: 1px solid var(--colorSegundario);
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+.contenedorFormulario #botonAgregar:hover {
+  background-color: var(--colorSegundario);
+  color: var(--colorPrincipal);
+}
+.contenedorFormulario #botonAgregar:hover #icon {
+  color: var(--colorPrincipal);
+  background-color: var(--colorSegundario);
+}
+.contenedorFormulario #botonAgregar #icon {
+  margin-right: 5px;
+  font-size: 25px;
+  color: var(--colorSegundario);
+  transition: 0.3s all ease-in-out;
+}
+
+.tituloSecundario {
+  font-size: 1.2rem;
+  color: var(--colorSegundario);
+}
+
+.opciones {
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+.opciones #botonEtiqueta {
+  color: var(--colorPrincipal);
+  width: 5em;
+  height: 3em;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: var(--colorSegundario);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+}
+.opciones #botonEtiqueta:hover {
+  background-color: var(--colorTexto);
+}
+.opciones #botonEtiqueta:focus {
+  background-color: var(--botonActivo);
+  color: var(--colorPrincipal);
+  transform: scale(1.1);
+}
+
+.activo {
+  background-color: var(--colorTexto);
+}/*# sourceMappingURL=index.css.map */
